@@ -5,11 +5,15 @@
   "contact": {
     "title": "Contact",
     "type": "page",
-    "href": "https://youtube.com/lupleg",
+    "href": "https://youtube.com/@lupleg",
     "newWindow": true
   },
   "about": {
     "title": "About the author",
+    "type": "page"
+  },
+  "mms": {
+    "title": "Mentor Manager",
     "type": "page"
   }
 }
