@@ -1,17 +1,11 @@
 {
   "index": "Home",
-  "getting-started-with-nextjs": "Getting Started",
+  "started": "Getting Started",
+  "video": "Video SDK",
+  "mms": "Mentor Manager",
   "cloud-development": "Cloud DevOps",
   "about": {
     "title": "Author",
-    "type": "page"
-  },
-  "mms": {
-    "title": "Mentor Manager",
-    "type": "page"
-  },
-  "video": {
-    "title": "Video SDK",
     "type": "page"
   }
 }
