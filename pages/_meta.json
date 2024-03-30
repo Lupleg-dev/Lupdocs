@@ -1,19 +1,17 @@
 {
   "index": "Home",
   "getting-started-with-nextjs": "Getting Started",
-  "cloud-development": "Cloud Development",
-  "contact": {
-    "title": "Contact",
-    "type": "page",
-    "href": "https://youtube.com/@lupleg",
-    "newWindow": true
-  },
+  "cloud-development": "Cloud DevOps",
   "about": {
-    "title": "About the author",
+    "title": "Author",
     "type": "page"
   },
   "mms": {
     "title": "Mentor Manager",
+    "type": "page"
+  },
+  "video": {
+    "title": "Video SDK",
     "type": "page"
   }
 }
