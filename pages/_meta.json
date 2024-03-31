@@ -3,9 +3,5 @@
   "started": "Getting Started",
   "video": "Video SDK",
   "mms": "Mentor Manager",
-  "cloud-development": "Cloud DevOps",
-  "about": {
-    "title": "Author",
-    "type": "page"
-  }
+  "cloud-development": "Cloud DevOps"
 }
