@@ -6,7 +6,7 @@ export default {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: "Nextra Demo - %s",
+      titleTemplate: "Lupleg Docs - %s",
     };
   },
   footer: {
