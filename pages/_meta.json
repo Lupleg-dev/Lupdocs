@@ -1,7 +1,22 @@
 {
-  "index": "Home",
-  "started": "Getting Started",
-  "lroom": "Lupleg Room",
-  "mms": "Mentor Manager",
-  "about": "About us"
+  "index": {
+    "title": "Home",
+    "type": "page"
+  },
+  "started": {
+    "title": "Getting Started",
+    "type": "page"
+  },
+  "lroom": {
+    "title": "Lupleg Room",
+    "type": "page"
+  },
+  "mms": {
+    "title": "Mentor Manager System",
+    "type": "page"
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
 }
