@@ -1,6 +1,7 @@
 {
   "index": {
-    "display": "hidden"
+    "title": "Home",
+    "type": "page"
   },
   "started": {
     "title": "Getting Started",
