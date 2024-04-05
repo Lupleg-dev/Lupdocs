@@ -15,6 +15,10 @@
     "title": "Mentor Manager System",
     "type": "page"
   },
+  "tasks": {
+    "title": "Tasks Updates",
+    "type": "page"
+  },
   "about": {
     "title": "About",
     "type": "page"
