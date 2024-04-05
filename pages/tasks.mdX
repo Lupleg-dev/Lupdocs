@@ -1,16 +1,29 @@
 # Tasks Reports
+
+## 03/04/24
 Implement Tasks and Reports pages with the following features:
 
 - Item header with search bar (not yet functional), and filter
 - Items list is modified based on selected filter
-- Add a section that displays a detailed description of a report
+- Add a section that displays a detailed description of a report or task
 (selected fron the item list)
 - Add compose, share and download buttons
 - Make use of reusable components to create a cleaner code base
 
-Aman(4-04-2024)
+**NB** The above is the sample of how it should be done
+
+## 04/04/24
+### Aman
 - Implemented the design of the Messages page
 - Solved the scroll issue on each page(Profile,Tasks,Reports,Settings)
 
-
-**NB** The above is the sample of how it should be done
+### Raymond
+Update on Dashboard component (file: **src/pages/Dashboard.jsx**)
+  * Read up on `useContext` hook. It might be helpful because the **Dashboard.jsx**,
+    **Reports.jsx** and **Tasks.jsx** files need to share a state.
+  * Connect header and sidebar to dashboard page.
+  * Created cards (**src/components/dashboard/Cards.jsx**) for the dashboard page.
+    Work still needs to be done on the styling.
+  * To do:
+    - Improve styling of the cards created today
+    - Connect task and report cards (these had been created earlier) to the dashboard page.
