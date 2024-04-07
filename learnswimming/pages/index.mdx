@@ -1,0 +1,106 @@
+import Head from 'next/head';
+import Link from 'next/link';
+import { useEffect } from 'react';
+import anime from 'animejs';
+import Image from 'next/image';
+ 
+
+
+export default function Home() {
+  useEffect(() => {
+    const animationTimeline = anime.timeline({
+      easing: 'easeInOutQuad',
+    });
+
+    animationTimeline.add({
+      targets: '.header-text',
+      translateY: ['50%', '0%'],
+      opacity: [0, 1],
+      duration: 900,
+      delay: 500,
+    });
+
+    animationTimeline.add({
+      targets: '.subheader-text',
+      translateY: ['50%', '0%'],
+      opacity: [0, 1],
+      duration: 900,
+    });
+
+        animationTimeline.add({
+      targets: '.button-link',
+      translateY: ['50%', '0%'],
+      opacity: [0, 1],
+      duration: 900,
+    });
+  }, []);
+
+  return (
+    <>
+      <Head>
+        <title>Learn Swimming</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+      </Head>
+
+
+  <h1 className="header-text" style={{
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeight: '500',
+    fontSize: '4rem',
+    textAlign: 'center',
+    marginBottom: '1rem',
+    paddingTop: '3rem'
+  }}>
+   <Image src="/images/learnlogo.png" alt="Hello" width={800} height={800} />
+  </h1>
+  <p className="subheader-text" style={{
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeight: '300',
+    fontSize: '1.5rem',
+    textAlign: 'center',
+    marginBottom: '1rem',
+    
+  }}>
+  Welcome! This guide help's swimmers at every level improve their skills, technique, and confidence in the water. Whether you're a complete beginner or an experienced swimmer, you'll find information, tips, and drills to help you excel. And the best part? This swimming guide is completely free! Everyone deserves access to high-quality swimming resources, regardless of their budget or experience. So go ahead and dive in – explore the site to discover everything you need to become a better, more confident swimmer.
+  </p>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Link href="/guide/intro">
+          <p className="button-link" style={{
+            backgroundColor: '#3e9aff',
+            color: 'white',
+            padding: '12px 32px',
+            borderRadius: '30px',
+            textDecoration: 'none',
+            fontSize: '1.25rem',
+            boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.25)',
+            display: 'inline-block',
+            textAlign: 'center'
+          }}>
+            Click here to get started! 
+          </p>
+        </Link>
+      </div>
+      <Image
+  style={{
+    position: 'fixed',
+    bottom: 0,
+    right: 0,
+    zIndex: -1,
+    width: '100%',
+    height: 'auto',
+  }}
+  src="/images/wave.png"
+  alt="Background wave"
+  layout="responsive"
+  width={1}
+  height={0.2}
+  objectFit="cover"
+  objectPosition="center bottom"
+  quality={100}
+/> 
+
+    </>
+
+  );
+}

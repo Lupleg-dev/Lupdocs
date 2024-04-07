@@ -1,0 +1,139 @@
+import Image from 'next/image';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useEffect } from 'react';
+import anime from 'animejs';
+
+export default function Home() {
+  useEffect(() => {
+    const animationTimeline = anime.timeline({
+      easing: 'easeInOutSine',
+    });
+
+    animationTimeline.add({
+      targets: '.header-text',
+      translateY: ['50%', '0%'],
+      opacity: [0, 1],
+      duration: 900,
+    });
+
+    animationTimeline.add({
+      targets: '.subheader-text',
+      translateY: ['50%', '0%'],
+      opacity: [0, 1],
+      duration: 900,
+    });
+
+        animationTimeline.add({
+      targets: '.button-link',
+      translateY: ['50%', '0%'],
+      opacity: [0, 1],
+      duration: 900,
+    });
+  }, []);
+
+  return (
+    <>
+      <Head>
+        <title>Learn Swimming</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+      </Head>
+
+
+<h1 className="header-text" style={{
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeight: '500',
+    fontSize: '4rem',
+    textAlign: 'center',
+    marginBottom: '1rem',
+    paddingTop: '3rem'
+  }}>
+    About Me
+</h1>
+
+   <div style={{ display: 'flex', justifyContent: 'center' }}>
+  <p className="header-text" style={{
+    borderRadius: '30px',
+    textDecoration: 'none',
+    fontSize: '1.25rem',
+    boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.25)',
+    display: 'inline-block',
+    textAlign: 'center'
+  }}>
+    <img src="https://i.imgur.com/Z0zwDU9.jpeg" alt="Get started button" style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      borderRadius: '30px'
+    }} />
+  </p>
+  </div>
+  <p className="header-text" style={{
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeight: '300',
+    padding: '12px',
+    fontSize: '1.5rem',
+    textAlign: 'center',
+    marginBottom: '1rem'
+  }}>
+  Hi there my name's Evan, and welcome to my swimming guide! 
+I'm a lifeguard and swim instructor who's been working in community centers in Toronto and Mississauga for the last 8 years.
+My experience with teaching a variety of swimming classes allows me to teach great swimming lessons to those at any level of swimming knowledge.
+I wanted to create a completely free swimming guide 
+online that anyone could use to learn to swim.
+This site is built with Next.js, Nextra and Anime JS
+<br></br><br></br>
+If you have any questions you can contact me at my Linkedin or my email:     <Link href="https://www.linkedin.com/in/evan-koumarelas">
+          <p className="header-text" style={{
+            backgroundColor: '#3e9aff',
+            color: 'white',
+            padding: '12px 32px',
+            borderRadius: '30px',
+            textDecoration: 'none',
+            fontSize: '1.25rem',
+            boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.25)',
+            display: 'inline-block',
+            textAlign: 'center'
+          }}>
+            Linkedin 
+          </p>
+        </Link>        <Link href="mailto:evankoumarelas@hotmail.com">
+          <p className="header-text" style={{
+            backgroundColor: '#3e9aff',
+            color: 'white',
+            padding: '12px 32px',
+            borderRadius: '30px',
+            textDecoration: 'none',
+            fontSize: '1.25rem',
+            boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.25)',
+            display: 'inline-block',
+            textAlign: 'center'
+          }}>
+            Email
+          </p>
+        </Link></p>
+      <Image
+  style={{
+    position: 'fixed',
+    bottom: 0,
+    right: 0,
+    zIndex: -1,
+    width: '100%',
+    height: 'auto',
+  }}
+  src="/images/wave.png"
+  alt="Background wave"
+  layout="responsive"
+  width={1}
+  height={0.2}
+  objectFit="cover"
+  objectPosition="center bottom"
+  quality={100}
+/> 
+
+    </>
+
+    
+  );
+}
