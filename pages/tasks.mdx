@@ -1,0 +1,81 @@
+# Task Reports
+
+## 03/04/24
+Implement Tasks and Reports pages with the following features:
+
+- Item header with search bar (not yet functional), and filter
+- Items list is modified based on the selected filter
+- Add a section that displays a detailed description of a report or task
+(selected from the item list)
+- Add compose, share and download buttons
+- Make use of reusable components to create a cleaner code base
+
+**NB** The above is a sample of how it should be done
+
+## 04/04/24
+### Aman
+Update on Messages component (file: **src/pages/Messages.JSX**)
+- Implemented the design of the Messages page
+- Solved the scroll issue on each page(Profile,Tasks,Reports,Settings)
+- To do: Complete the button functionalities on the page
+   
+### Nitin
+Implemented the **DiscussionForum Page [ Frontend ]** with all the functionalities such as: file: **(src/pages/DiscussionForum.JSX)**
+- There are cards for each discussion and option for adding new Discussion also.
+- After clicking on three dots on card you can Edit and Delete you Discussion Forum.
+- There is a option for Bookmark on each card.
+- Share button 
+
+### Vikram
+Write code for Certificate Section (file: **src/pages/certificate.JSX**)
+- Implement UI and design structure for certificate component with help of figma design.
+- Use `useState` and `useNavigate` to implement logic and UX.
+- Create route for it to connect it with MMS website.
+* To do:
+  - need to create further its subcomponent or next pages for generate and apply certificate.
+
+### Raymond
+Update on Dashboard component (file: **src/pages/Dashboard.JSX**)
+  * Read up on the `useContext` hook. It might be helpful because of the **Dashboard.JSX**,
+    **Reports.jsx** and **Tasks.jsx** files need to share a state.
+  * Connect the header and sidebar to the dashboard page.
+  * Created cards (**src/components/dashboard/Cards. JSX**) for the dashboard page.
+    Work still needs to be done on the styling.
+  * To do:
+    - Improve styling of the cards created today
+    - Connect task and report cards (these had been created earlier) to the dashboard page.
+## 05/04/24
+### Aman
+Update on Messages component (file: **src/pages/Messages.JSX**)
+ - Created `messagesData.js` and `MessagesCards.jsx` to acheive code reusability
+    * Used `ItemList.jsx` which has been used in `Tasks.jsx` and `Reports.jsx` too.(this has taken most of the time).
+ - Created the right section of the page.
+ - Buttons are working( `Send Broadcast Message`, `Close`).
+ - To do:
+    * Search button working
+    
+
+### Nitin 
+Update the DiscussionForum component  file: **(src/pages/DiscussionForum.JSX)**
+- Solved the bugs like :
+   * Now on click on one card's three dots edit option open for only that discussionforum.
+   * Optimise the styling.
+   * Navigation to `Messages Page` when user click on chat icon.
+   * Changing icon on bookmark.
+
+### Vikram
+My moving forward in Certificate component design make generate and apply certificate pages (file: **src/pages/GenerateCertificate.JSX**, **src/pages/ApplyCertificate.JSX**)
+- Implement UI and design structure for these subcomponent.
+- Create route for Both component.
+- Connect it with certificate page and to our MMS project.
+* To do:
+  - Implement further functionality in it to make it more interactive Such as selection of types of certificate and name of program to generate or apply for certificate.
+
+### Raymond
+- Fix styling of dashboard cards
+- Create new cards for the reports and tasks overviews
+- Make buttons and cards navigate to relevant pages on click
+- Display the corresponding description of a task or report item in the
+  reports and tasks pages based on clicked card. This functionality was achieved using the `useContext` hook
+
+
