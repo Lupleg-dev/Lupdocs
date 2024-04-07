@@ -4,17 +4,17 @@ import Image from 'next/image';
 
 const config: DocsThemeConfig = {
   project: {
-    link: 'https://github.com/eman101101/learnswimming',
+    link: 'https://github.com/Lupleg-dev/Lupdocs',
   },
-  docsRepositoryBase: 'https://github.com/eman101101/learnswimming/blob/main',
+  docsRepositoryBase: 'https://github.com/Lupleg-dev/Lupdocs',
   footer: {
     text: <span>
-       <b>Created using Nextra and Next.Js <br></br></b>© {new Date().getFullYear()}   - Evan Koumarelas
+       <b>Lupleg Docs </b>© {new Date().getFullYear()}   - Open Source
     </span>,
   },
   logo: (
     <>
-<Image src="/images/learnlogo.png" alt="Hello" width={100} height={100} />
+<Image src="/images/lupleg.png" alt="Hello" width={100} height={100} />
     </>
   ),
   search: {
