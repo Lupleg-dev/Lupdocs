@@ -6,7 +6,7 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/Lupleg-dev/Lupdocs',
   },
-  docsRepositoryBase: 'https://github.com/Lupleg-dev/Lupdocs',
+  docsRepositoryBase: 'https://github.com/Lupleg-dev/Lupdocs/tree/main',
   footer: {
     text: <span>
        <b>Lupleg Docs </b>© {new Date().getFullYear()}   - Open Source
