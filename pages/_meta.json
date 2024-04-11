@@ -1,12 +1,16 @@
 {
   "index": {
-        "title": "Home",
-        "type": "page"
-      },
+    "title": "Home",
+    "type": "page"
+  },
   "guide": {
-        "title": "Guide",
-        "type": "page"
-      },
+    "title": "Guide",
+    "type": "page"
+  },
+  "mms": {
+    "title": "MMS",
+    "type": "page"
+  },
   "about": {
     "title": "About",
     "type": "page"
