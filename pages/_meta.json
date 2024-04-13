@@ -7,6 +7,10 @@
     "title": "Guide",
     "type": "page"
   },
+  "mms": {
+    "title": "MMS",
+    "type": "page"
+  },
   "about": {
     "title": "About",
     "type": "page"
