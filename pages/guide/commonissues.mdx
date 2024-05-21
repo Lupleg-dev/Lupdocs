@@ -2,59 +2,45 @@ import Image from 'next/image'
 
 # Common Issues and Tips
 
-Before you start swimming, it's important to be aware of some common issues and tips to help you get the most out of your swimming experience.
-
-## Common Issues
-
-### Cramps
-
-<br></br>
-<Image src="/images/streches.jpg" alt="Hello" width={500} height={500} />
-
-Photo by [akeenster](https://unsplash.com/@akeenster)
-  
-  
-
-Cramps can happen because of dehydration or muscle fatigue. They can be sudden, painful, and disruptive to a good swimming workout. Stay hydrated and maintain a proper diet rich in potassium and magnesium. Do some streches, warm-up before starting your swim, and perform some cool-down exercises post-swim.
-
-### Swimmer's Ear
-Swimmer's ear can be a problem for frequent swimmers. This is an infection in the outer ear canal, often brought on by water that stays in the ear after swimming, creating a moist environment that aids bacterial growth. Consider getting Swimming earplugs, use ear drops after swimming, and try to keep water from staying in your ears for too long.
-
-### Sensitivity to Cold
-
-Some swimmers are more sensitive to cold water than others. This can lead to muscle stiffness and difficulty in moving. If you're sensitive to cold, consider wearing a thermal swim cap and investing in a good quality wetsuit. Always enter cold water gradually to prevent cold shock.
-
-### Chlorine Irritation
-
-Chlorine can cause dry skin, damage hair, and irritate eyes.
-
-Rinse off before and after swimming. Apply a swimmer's lotion to your skin and use a swim cap to protect your hair. Wear goggles to protect your eyes.
-
-### Goggle Fog
-
-Foggy goggles can disrupt your vision underwater, affecting your swimming experience. You can use anti-fog spray before you swim. You can also rinse your goggles in cold water before use.
-
-## Swimming Tips
-
-### Use The Clock
-
-<br></br>
-<Image src="/images/swimmingclock.jpg" alt="Hello" width={500} height={500} />
-
-Photo by [Giuseppe Burdo](https://pin.it/6SLJjWL)  
-
-Keep track of your swimming duration and rest periods with a clock. This will help improve your speed and endurance over time.
-
-### Warm-Up and Cool Down
-Always warm-up before swimming to prepare your muscles and reduce the risk of injuries. Similarly, cool down after swimming to help your muscles recover.
-
-### Stay Hydrated
-Even if you're surrounded by water, you can still become dehydrated very easily while swimming. Make sure to hydrate before, during, and after your swim.
-
-### Don't Skip Leg Day
-Many swimmers rely too much on their upper bodies. Kick exercises can improve your leg strength, which contributes significantly to propulsion.
-
-### Everyone is Different
-
-Everyone is different, and what works for one swimmer may not work for another. Don’t simply imitate techniques from other swimmers. Consider getting a professional swimming assessment to identify what's best for you.
-
+How do you debug your codebase if you have some issues? Well we will clear the throat here. Here are some common issues and tips to help you debug your codebase: 
+1. **Error: `next/image` requires `width` and `height` props**: 
+- **Solution:** Make sure you're providing the `width` and `height` props to the `Image` component. If you're using
+`next/image` with a dynamic image, you might need to use a library like `react-use-dimensions` to get the dimensions of Image
+2. **Error: `next/image` requires `src` prop**:
+- **Solution:** Make sure you're providing the `src` prop to the `Image` component. If you're using a dynamic image 
+make sure the `src` prop is not empty or null.
+3. **Error: `next/image` requires `alt` prop**:
+- **Solution:** Make sure you're providing the `alt` prop to the `Image` component. This is a accessibility requirement.
+4. **Error: `next/image` is not optimized for production**:
+- **Solution:** Make sure you're using `next/image` with the `optimizer` option enabled. You can do this by adding
+`optimizer` to your `next.config.js` file.
+5. **Error: `next/image` is not working with CSS frameworks like Tailwind CSS**:
+- **Solution:** Make sure you're using the `className` prop to add classes to the `Image` component. If you're using a CSS
+framework like Tailwind CSS, you might need to add the classes to the `img` element instead of the `Image` component.
+6. **Error: `next/image` is not working with dynamic imports**:
+- **Solution:** Make sure you're using the `import dynamic from 'next/dynamic'` syntax to import the `Image` component.
+This is required for dynamic imports.
+7. **Error: `next/image` is not working with server-side rendering (SSR)**:
+- **Solution:** Make sure you're using the `next/image` component with the `ssr` option enabled. You can do this by adding
+`ssr` to your `next.config.js` file.
+8. **Error: `next/image` is not working with internationalized (i18n) routes**:
+- **Solution:** Make sure you're using the `next/image` component with the `i18n` option enabled. You can do this by
+adding `i18n` to your `next.config.js` file.
+9. **Error: `next/image` is not working with lazy loading**:
+- **Solution:** Make sure you're using the `next/image` component with the `lazy` option enabled. You can do this by
+adding `lazy` to your `next.config.js` file.
+10. **Error: `next/image` is not working with responsive images**:
+- **Solution:** Make sure you're using the `next/image` component with the `responsive` option enabled. You can do this
+by adding `responsive` to your `next.config.js` file.
+11. **Error: `next/image` is not working with WebP images**:
+- **Solution:** Make sure you're using the `next/image` component with the `formats` option enabled. You can do this by
+adding `formats` to your `next.config.js` file.
+12. **Error: `next/image` is not working with SVG images**:
+- **Solution:** Make sure you're using the `next/image` component with the `svg` option enabled. You can do this by
+adding `svg` to your `next.config.js` file.
+13. **Error: `next/image` is not working with GIF images**:
+- **Solution:** Make sure you're using the `next/image` component with the `gif` option enabled. You can do this by
+adding `gif` to your `next.config.js` file.
+14. **Error: `next/image` is not working with AVIF images**:
+- **Solution:** Make sure you're using the `next/image` component with the `avif` option enabled. You can do this by
+adding `avif` to your `next.config.js` file.
