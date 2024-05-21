@@ -1,13 +1,12 @@
 {
-  "intro": "Introduction",
-  "watersafety": "Water Safety and Drowning Prevention",
-  "etiquette": "Swimming Etiquette",
+  "welcome": "Welcome to Lupleg",
+  "getstarted": "Get Started",
+  "stack": "Tech Stack",
+  "updates": "Updates",
+  "troubleshooting": "Troubleshooting",
   "commonissues": "Common Issues and Tips",
   "basicskills": "Basic Skills",
-  "strokes": "Swimming Strokes",
-  "deepwaterskills": "Deep Water Skills",
   "advancedskills": "Advanced Skills",
-  "endurance": "Endurance Training",
   "dailytasks": "Daily Tasks",
   "mms": "Mentor Management"
 }
