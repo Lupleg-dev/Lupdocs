@@ -1,6 +1,6 @@
-# Lupleg Docs
+# Lupleg 
 
-Welcome to Lupleg Docs! This is an open-source project aimed at providing comprehensive documentation for the Lupleg software.
+Hello 👋 there, let's run you quick through what we got here.
 
 ## Table of Contents
 - [Introduction](#introduction)
