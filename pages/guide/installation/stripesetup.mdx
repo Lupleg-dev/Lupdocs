@@ -1,0 +1,51 @@
+# Stripe Setup
+
+You can skip this step if you're on the Gravity Native plan. 
+Gravity handles the hard work of creating and managing subscriptions in your application, but you will need to create a Stripe account and configure a few settings before you can start processing payments and start making some sweet dollas.
+While you can run Stripe in test mode without an SSL certificate, you will need one before you can use Stripe in your live application.
+
+## 1. Register Your Stripe Account
+
+Head over to Stripe and create your account. Setup is free – you'll only be charged a small fee on each transaction that you process.
+
+## 2. Activate Test Data
+
+Once you've registered and signed in to your account, you'll be presented with your Stripe dashboard.
+Stripe has two development modes: 
+Test
+Live 
+Test mode is a great feature that enables you to build and test your payment engine without using  real credit cards. You can use test card numbers to test different scenarios and error messages.
+Go ahead and toggle the Test Mode switch at the top right menu to start working in test mode.
+
+Switch on test mode in Stripe
+When using Stripe in test mode, you can use the test credit card details:
+Card Number: 4242 4242 4242 4242
+Expiry Date: 04 25
+CCV: 424
+Postcode: 42424
+
+## 3. Create a Product
+
+Next, click on Products and click the + Add Product button.
+
+Enter a product name (the name of your application), description and statement descriptor here, which is the name that will appear on your customer's credit card statement (it's only required in live mode).
+
+## 4. Add Pricing Plans
+
+Next, create your pricing plan(s). 
+Use something easy to identify, like: plan_startup to make your life easier when coding the back-end of your application.
+Select Standard pricing, set the price and currency and set the interval to recurring to create a subscription. You can also set the billing period here.
+
+## 5. Copy The API Keys
+
+Finally, make a note of the API keys. 
+
+Stripe has two API keys: 
+Publishable Key (used client-side)
+Secret Key (used server-side)
+There are two sets of keys for working with live data and test data. 
+
+During development, you'll use the test API keys, but when you deploy your application – ensure you switch these to the live keys.
+Click on Developers > API Keys
+Copy the API keys somewhere safe for now. You'll need them soon.
+That's it for Stripe! There are a lot of other options you can customise. Please refer to the [Stripe Documentation](https://stripe.com/docs) for further information.
