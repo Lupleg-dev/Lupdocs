@@ -1,0 +1,28 @@
+# Database Setup
+
+
+You'll need an empty database for storing your application data, so go ahead and set up a new one using your favourite database service.
+
+You don't need to create any tables or documents – Gravity will do that automatically for you.
+
+```
+MySQL & Mongo database drivers are included by default. If you're using another database client eg. Postges then please install the relevant driver with npm.
+```
+
+Take note of your database credentials, you'll need these during the setup process.
+
+```
+If you're using a local instance of MongoDB you will need to remove srv from the connection string after your run the setup process. See below.
+```
+
+```
+// change this line in model/mongo
+const url = `mongodb+srv://${process.env.DB_USER}:${encodeURIComponent(process.env.DB_PASSWORD)}@${process.env.DB_HOST}/${process.env.DB_NAME}`;
+```
+
+```
+// to this
+const url = `mongodb://${process.env.DB_USER}:${encodeURIComponent(process.env.DB_PASSWORD
+```
+
+

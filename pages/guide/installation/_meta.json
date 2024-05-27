@@ -1,0 +1,9 @@
+{
+  "install": "Install",
+  "installnodejs": "Install Node.js",
+  "databasesetup": "Database Setup",
+  "stripesetup": "Stripe Setup",
+  "mailgunsetup": "Mailgun Setup",
+  "installlupleg": "Install Lupleg"
+}
+
