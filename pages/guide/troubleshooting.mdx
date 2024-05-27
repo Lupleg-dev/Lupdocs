@@ -2,27 +2,52 @@ import { Card, Cards } from 'nextra-theme-docs'
 
 # Troubleshooting
 
-Learning deep water swimming skills is essential for safety in open water environments, as it equips individuals with the ability to confidently navigate and handle unexpected situations, such as deep water rescues or accidental submersions. Moreover, mastering deep water swimming skills enhances overall swimming competence, allowing individuals to explore a wider range of aquatic activities and enjoy a greater sense of freedom and confidence in the water.
-<br></br>
-<Cards>
-<Card
-  title="Treading Water"
-  href="/guide/basicskills/entering"
-/>
-<Card
-  title="Survival Float"
-  href="/guide/basicskills/entering"
-/>
-<Card
-  title="Surface Dives"
-  href="/guide/basicskills/entering"
-/>
-<Card
-  title="Stride Entry"
-  href="/guide/basicskills/entering"
-/>
-<Card
-  title="Dives"
-  href="/guide/basicskills/entering"
-/>
-</Cards>
+Common issues and how to fix them.
+
+## Axios 404 error in the client
+
+The server is not running or the client can not reach it.
+
+Often the node server will not start because there is already an instance of the node running on port 8080. Kill the other instances and try again.
+
+```
+killall node
+npm run dev // or nodemon in the server folder
+```
+
+When the server runs, you will see the Welcome to Lupleg 🚀 message in your terminal console.
+
+## CLI toolbet command not found
+
+The setup script will run `npm link` but sometimes it may fail, rerun it manually.
+
+```
+npm link
+```
+
+## Setup script did not complete
+
+This is usually an issue on certain Windows shells.
+
+Replace the; in the `setup` script in `package.json` with &&
+
+```
+"setup": "node bin/installcheck && npm install && npm link && node bin/clientcheck && cd ../client && npm install && cd ../server && node bin/appcheck && cd ../app && npm install && cd ../server && node bin/setup.js && npm run dev",
+```
+
+## Email template not found
+
+Run the seed file to populate the database.
+
+```
+// sql
+node seeds/sql
+
+// mongo
+node seeds/mongo
+```
+
+## Can't log into Mission Control
+
+`TOKEN_SECRET` in your Mission Control `.env` file does not match the `TOKEN_SECRET` in /server.
+
