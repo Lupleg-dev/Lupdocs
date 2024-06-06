@@ -1,14 +1,13 @@
 # Stripe Setup
 
-You can skip this step if you're on the Lupleg Native plan. 
+You can skip this step if you're on the Lupleg Native plan.
 
 Lupleg handles the hard work of creating and managing subscriptions in your application, but you will need to create a [Stripe account](https://dashboard.stripe.com/register) and configure a few settings before you can start processing payments and make some sweet dollars.
 
 ```
-While you can run Stripe in test mode without an SSL certificate, 
+While you can run Stripe in test mode without an SSL certificate,
 you will need one before you can use Stripe in your live application.
 ```
-
 
 ## 1. Register Your Stripe Account
 
@@ -18,12 +17,12 @@ Head over to Stripe and [create your account](https://dashboard.stripe.com/regis
 
 Once you've registered and signed in to your account, you'll be presented with your Stripe dashboard.
 
-Stripe has two development modes: 
+Stripe has two development modes:
 
 - Test
-- Live 
+- Live
 
-Test mode is a great feature that enables you to build and test your payment engine without using  real credit cards. You can use test card numbers to test different scenarios and error messages.
+Test mode is a great feature that enables you to build and test your payment engine without using real credit cards. You can use test card numbers to test different scenarios and error messages.
 
 Go ahead and toggle the Test Mode switch at the top right menu to start working in test mode.
 
@@ -44,10 +43,10 @@ Enter a product name (the name of your application), description and statement d
 
 ## 4. Add Pricing Plans
 
-Next, create your pricing plan(s). 
+Next, create your pricing plan(s).
 
 ```
-Use something easy to identify, like: plan_startup to make your 
+Use something easy to identify, like: plan_startup to make your
 life easier when coding the backend of your application.
 ```
 
@@ -57,12 +56,12 @@ Select Standard pricing, set the price and currency and set the interval to recu
 
 Finally, make a note of the API keys.
 
-Stripe has two API keys: 
+Stripe has two API keys:
 
 - Publishable Key (used client-side)
 - Secret Key (used server-side)
 
-There are two sets of keys for working with live data and test data. 
+There are two sets of keys for working with live data and test data.
 
 During development, you'll use the test API keys, but when you deploy your application – ensure you switch these to the live keys.
 
