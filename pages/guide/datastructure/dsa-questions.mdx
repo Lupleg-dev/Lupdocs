@@ -1,0 +1,347 @@
+# Question 1: Implementing a Stack using an Array
+
+**Scenario:** : You are building a software that needs to handle undo operations. 
+For this purpose, you need to implement a stack data structure.
+
+**Task:** Implement a stack using an array in C++. 
+Provide methods for push, pop, and peek operations.
+## Example:
+```cpp
+#include <iostream>
+using namespace std;
+
+class Stack {
+private:
+    int top;
+    int capacity;
+    int* array;
+
+public:
+    Stack(int size) {
+        capacity = size;
+        array = new int[capacity];
+        top = -1;
+    }
+
+    ~Stack() {
+        delete[] array;
+    }
+
+    void push(int value) {
+        if (top >= capacity - 1) {
+            cout << "Stack Overflow\n";
+            return;
+        }
+        array[++top] = value;
+    }
+
+    int pop() {
+        if (top < 0) {
+            cout << "Stack Underflow\n";
+            return -1;
+        }
+        return array[top--];
+    }
+
+    int peek() {
+        if (top < 0) {
+            cout << "Stack is Empty\n";
+            return -1;
+        }
+        return array[top];
+    }
+
+    bool isEmpty() {
+        return top == -1;
+    }
+};
+
+int main() {
+    Stack stack(5);
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+
+    cout << "Top element is: " << stack.peek() << endl;
+    cout << "Popped element is: " << stack.pop() << endl;
+    cout << "Top element is: " << stack.peek() << endl;
+
+    return 0;
+}
+```
+ ### Explanation:
+- 	The Stack class uses an array to store elements.
+-   The push method adds an element to the stack.
+-   The pop method removes the top element from the stack.
+-   The peek method returns the top element without removing it.
+- 	The isEmpty method checks if the stack is empty.
+
+
+  # Question 2: Binary Search in a Sorted Array
+  **Scenario:** You are developing a search feature for an application
+  where the data is stored in sorted arrays.
+  
+  **Task:** Implement binary search in a sorted array in C++.
+  The function should return the index of the target element if found, otherwise -1 .
+  ## Example:
+  ```cpp
+ #include <iostream>
+using namespace std;
+
+int binarySearch(int array[], int size, int target) {
+    int left = 0, right = size - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (array[mid] == target)
+            return mid;
+        if (array[mid] < target)
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return -1;
+}
+
+int main() {
+    int array[] = {2, 3, 4, 10, 40};
+    int size = sizeof(array) / sizeof(array[0]);
+    int target = 10;
+    int result = binarySearch(array, size, target);
+    if (result != -1)
+        cout << "Element found at index " << result << endl;
+    else
+        cout << "Element not found in array" << endl;
+    return 0;
+}
+```
+### Explanation:
+-  	The binarySearch function performs binary search on the sorted array.
+-   It iteratively checks the middle element and adjusts the search range based on the comparison.
+-   If the target element is found, it returns the index; otherwise, it returns -1 .
+
+# Question 3: Implementing a Queue using Linked List
+
+**Scenario:** : You are designing a system that processes tasks in a first-come, firstserved manner. For this, you need a queue data structure.
+
+**Task:** Implement a queue using a linked list in C++. Provide methods for enqueue, dequeue, and front operations.
+
+## Example:
+```cpp
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+    Node(int value) : data(value), next(nullptr) {}
+};
+
+class Queue {
+private:
+    Node* front;
+    Node* rear;
+
+public:
+    Queue() : front(nullptr), rear(nullptr) {}
+
+    void enqueue(int value) {
+        Node* newNode = new Node(value);
+        if (rear == nullptr) {
+            front = rear = newNode;
+            return;
+        }
+        rear->next = newNode;
+        rear = newNode;
+    }
+
+    int dequeue() {
+        if (front == nullptr) {
+            cout << "Queue Underflow\n";
+            return -1;
+        }
+        Node* temp = front;
+        front = front->next;
+        if (front == nullptr)
+            rear = nullptr;
+        int value = temp->data;
+        delete temp;
+        return value;
+    }
+
+    int getFront() {
+        if (front == nullptr) {
+            cout << "Queue is Empty\n";
+            return -1;
+        }
+        return front->data;
+    }
+
+    bool isEmpty() {
+        return front == nullptr;
+    }
+};
+
+int main() {
+    Queue queue;
+    queue.enqueue(10);
+    queue.enqueue(20);
+    queue.enqueue(30);
+
+    cout << "Front element is: " << queue.getFront() << endl;
+    cout << "Dequeued element is: " << queue.dequeue() << endl;
+    cout << "Front element is: " << queue.getFront() << endl;
+
+    return 0;
+}
+```
+ ### Explanation:
+ -  The Queue class uses a linked list to store elements.
+ -  The dequeue method removes the front element from the queue.
+ -  The getFront method returns the front element without removing it.
+ -  The isEmpty method checks if the queue is empty.
+
+ # Question 4: Finding the Middle of a Linked List
+
+ **Scenario:** You are analyzing a linked list to find its middle element for some processing tasks.
+ 
+ **Task:** Implement a function to find the middle element of a singly linked list in C+
+
+ ## Example:
+ ```cpp
+ #include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    Node(int value) : data(value), next(nullptr) {}
+};
+
+Node* findMiddle(Node* head) {
+    if (head == nullptr) return nullptr;
+    Node* slow = head;
+    Node* fast = head;
+    while (fast != nullptr && fast->next != nullptr) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
+
+void printList(Node* head) {
+    while (head != nullptr) {
+        cout << head->data << " ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+int main() {
+    Node* head = new Node(1);
+    head->next = new Node(2);
+    head->next->next = new Node(3);
+    head->next->next->next = new Node(4);
+    head->next->next->next->next = new Node(5);
+
+    cout << "Linked List: ";
+    printList(head);
+
+    Node* middle = findMiddle(head);
+    if (middle != nullptr)
+        cout << "Middle element is: " << middle->data << endl;
+    else
+        cout << "The list is empty\n";
+
+    return 0;
+}
+```
+### Explanation:
+-  The findMiddIe function uses the two-pointer technique to find the middle of the linked list.
+-  The slow pointer moves one step at a time, while the fast pointer moves two steps at a time.
+-  When the fast pointer reaches the end, the slow pointer will be at the middle.
+
+# Question 5: Implementing Merge Sort
+
+**Scenario:** You are tasked with implementing a sorting algorithm for large datasets that needs to be efficient in terms of time complexity.
+
+**Task:** Implement the merge sort algorithm in C++.
+
+## Example:
+```cpp
+#include <iostream>
+using namespace std;
+
+void merge(int array[], int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    int* L = new int[n1];
+    int* R = new int[n2];
+
+    for (int i = 0; i < n1; ++i)
+        L[i] = array[left + i];
+    for (int i = 0; i < n2; ++i)
+        R[i] = array[mid + 1 + i];
+
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j])
+            array[k++] = L[i++];
+        else
+            array[k++] = R[j++];
+    }
+
+    while (i < n1)
+        array[k++] = L[i++];
+
+    while (j < n2)
+        array[k++] = R[j++];
+
+    delete[] L;
+    delete[] R;
+}
+
+void mergeSort(int array[], int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        mergeSort(array, left, mid);
+        mergeSort(array, mid + 1, right);
+        merge(array, left, mid, right);
+    }
+}
+
+void printArray(int array[], int size) {
+    for (int i = 0; i < size; ++i)
+        cout << array[i] << " ";
+    cout << endl;
+}
+
+int main() {
+    int array[] = {12, 11, 13, 5, 6, 7};
+    int size = sizeof(array) / sizeof(array[0]);
+
+    cout << "Given array is \n";
+    printArray(array, size);
+
+    mergeSort(array, 0, size - 1);
+
+    cout << "Sorted array is \n";
+    printArray(array, size);
+
+    return 0;
+}
+```
+### Explanation:
+- Merge Function: Uses temporary arrays to merge two sorted subarrays back into the original array in sorted order.
+- MergeSort Function: Recursively splits the array into smaller subarrays until each subarray has one element, then merges them back together using the merge function.
+- Main Function: Demonstrates the merge sort by initializing an array, printing it, sorting it with mergeSort, and printing the sorted array.
+
+
+
+ 
+ 
+  
+  
