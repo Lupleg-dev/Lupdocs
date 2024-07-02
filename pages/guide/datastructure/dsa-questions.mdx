@@ -70,11 +70,33 @@ int main() {
 }
 ```
  ### Explanation:
-- 	The Stack class uses an array to store elements.
--   The push method adds an element to the stack.
--   The pop method removes the top element from the stack.
--   The peek method returns the top element without removing it.
-- 	The isEmpty method checks if the stack is empty.
+#### Array:
+- An array is a data structure that stores a fixed-size sequential collection of elements of the same type. Elements in an array are stored in contiguous memory locations, allowing efficient access via indexing.
+- Arrays provide a simple way to allocate and manage memory for a collection of elements. They are ideal for scenarios where the size of the collection is known in advance and does not change dynamically.
+- In this implementation, an array is used to store the elements of the stack. The array's size (capacity) is specified when the stack is initialized, and memory is allocated accordingly.
+
+#### Stack Class:
+- The Stack class uses an array to store elements. Arrays provide a contiguous block of memory, allowing efficient indexing and storage of elements.
+
+#### Data Members:
+- top: Index of the top element.
+- capacity: Maximum number of elements.
+- array: Dynamically allocated array.
+
+#### Methods:
+- Constructor: Initializes the stack and allocates memory.
+- Destructor: Frees allocated memory.
+- push(int value): Adds an element to the stack.
+- pop(): Removes and returns the top element.
+- peek(): Returns the top element without removing it.
+- isEmpty(): Checks if the stack is empty.
+
+#### Main Function:
+
+- Creates a stack with capacity 5.
+- Pushes elements 10, 20, and 30.
+- Uses peek to show the top element.
+- Uses pop to remove the top element and peek again to show the updated top element.
 
 
   # Example 2: Binary Search in a Sorted Array
@@ -83,9 +105,10 @@ int main() {
   
   **Task:** Implement binary search in a sorted array in C++.
   The function should return the index of the target element if found, otherwise -1 .
-  ## Example:
+
+ 
   ```cpp
- #include <iostream>
+#include <iostream>
 using namespace std;
 
 int binarySearch(int array[], int size, int target) {
@@ -114,10 +137,13 @@ int main() {
     return 0;
 }
 ```
+
 ### Explanation:
 -  	The binarySearch function performs binary search on the sorted array.
 -   It iteratively checks the middle element and adjusts the search range based on the comparison.
 -   If the target element is found, it returns the index; otherwise, it returns -1 .
+
+
 
 # Example 3: Implementing a Queue using Linked List
 
@@ -335,9 +361,179 @@ int main() {
 }
 ```
 ### Explanation:
-- Merge Function: Uses temporary arrays to merge two sorted subarrays back into the original array in sorted order.
-- MergeSort Function: Recursively splits the array into smaller subarrays until each subarray has one element, then merges them back together using the merge function.
-- Main Function: Demonstrates the merge sort by initializing an array, printing it, sorting it with mergeSort, and printing the sorted array.
+#### Array: 
+- A sequence of elements stored in contiguous memory locations. In this example, arrays are used to store and sort elements.
+
+#### Merge Function:
+- Purpose: Merges two sorted subarrays back into the original array in sorted order.
+- Process: Creates temporary arrays L and R to hold elements from the two subarrays, then merges them back into the original array.
+####MergeSort Function:
+- Purpose: Recursively splits the array into smaller subarrays until each subarray has one element, then merges them back together.
+- Process: Finds the middle point, recursively sorts the left and right halves, and merges them using the merge function.
+#### Main Function:
+- Purpose: Demonstrates the merge sort.
+- Process: Initializes an array, prints the original array, sorts it using mergeSort, and prints the sorted array.
+
+# Example 6: Binary Search
+**Question:** Implement binary search algorithm in Java.
+
+**Scenario:** You need to implement a search algorithm to efficiently find an element in a sorted array.
+
+**Task:** Implement the binary search algorithm in Java.
+
+## Implementation:
+```java
+public class BinarySearchExample {
+
+    // Method to perform binary search
+    public static int binarySearch(int[] arr, int target) {
+        int left = 0; 
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            // Check if the target is present at mid
+            if (arr[mid] == target) {
+                return mid; // Target found
+            }
+
+            // If target is greater, ignore the left half
+            if (arr[mid] < target) {
+                left = mid + 1;
+            } 
+            // If target is smaller, ignore the right half
+            else {
+                right = mid - 1;
+            }
+        }
+
+        // Target not found
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, 3, 4, 10, 40};
+        int target = 10;
+
+        int result = binarySearch(arr, target);
+        if (result != -1) {
+            System.out.println("Element found at index " + result);
+        } else {
+            System.out.println("Element not found in array");
+        }
+    }
+}
+```
+## Explanation:
+#### Binary Search Method:
+
+- Parameters: Takes a sorted array arr and the target value to be searched.
+-**Variables:
+   - left: Starting index of the array (initially set to 0).
+
+   - right: Ending index of the array (initially set to arr.length - 1).
+
+#### Process:
+
+- The while loop runs as long as left is less than or equal to right.
+- Mid Calculation: int mid = left + (right - left) / 2; calculates the middle index to avoid overflow.
+
+#### Check Mid Value:
+- If arr[mid] equals the target, the target is found, and the index mid is returned.
+- If arr[mid] is less than the target, search in the right half by updating left to mid + 1.
+- If arr[mid] is greater than the target, search in the left half by updating right to mid - 1.
+#### Return: If the target is not found, -1 is returned.
+
+# Example 7: Implementing Bubble Sort in Java
+
+**Question:** Implement the bubble sort algorithm in Java.
+
+**Explanation:** Bubble sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It passes through the list multiple times until no swaps are needed, indicating that the list is sorted.
+
+## Java Implementation:
+```java
+public class BubbleSortExample {
+
+    // Method to perform bubble sort
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length; // Get the length of the array
+        boolean swapped;    // Flag to track if any elements were swapped
+
+        do {
+            swapped = false; // Assume no swaps are needed initially
+
+            // Iterate through the array and perform swaps
+            for (int i = 1; i < n; i++) {
+                if (arr[i - 1] > arr[i]) {
+                    // Swap arr[i-1] and arr[i]
+                    int temp = arr[i - 1];
+                    arr[i - 1] = arr[i];
+                    arr[i] = temp;
+                    swapped = true; // Set swapped flag to true
+                }
+            }
+
+            n--; // Decrease the array length after each pass
+        } while (swapped); // Repeat until no swaps are needed
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+
+        System.out.println("Array before sorting:");
+        printArray(arr);
+
+        bubbleSort(arr);
+
+        System.out.println("Array after sorting:");
+        printArray(arr);
+    }
+
+    // Utility method to print the elements of an array
+    public static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}
+```
+
+## Explanation:
+
+#### Bubble Sort Method (bubbleSort):
+- Purpose: Sorts an array arr in ascending order using the bubble sort algorithm
+
+-**Variables:
+  -n: Holds the current length of the array.
+
+  -swapped: Boolean flag to indicate if any elements were swapped during 
+   a pass through the array.
+
+#### Process:
+- The do-while loop executes at least once and continues as long as swapped is true, indicating that at least one swap occurred in the previous pass.
+- Inside the loop, the for loop iterates through the array from index 1 to n-1.
+- If arr[i-1] is greater than arr[i], the elements are swapped, and swapped is set to true.
+- After each complete pass through the array (for loop), n is decremented to shorten the effective length of the array for subsequent passes.
+
+#### Main Method:
+- Initializes an array arr with unsorted elements.
+- Prints the array before sorting.
+- Calls bubbleSort to sort the array.
+- Prints the array after sorting.
+
+#### Utility Method (printArray):
+-Prints the elements of an array for display purposes.
+
+
+
+
+
+
+
+
+
 
 
 
