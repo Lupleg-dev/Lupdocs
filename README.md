@@ -25,4 +25,4 @@ We welcome contributions from the community! If you'd like to contribute to Lupl
 Please make sure to follow our [contribution guidelines](CONTRIBUTING.md) for more details.
 
 ## License
-[MIT License]
+(About License)[MIT License]
