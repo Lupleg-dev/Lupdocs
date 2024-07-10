@@ -1,29 +1,73 @@
-import Image from 'next/image'
+---
+title: Backend Information
+---
 
-# Backend Information
+# Introduction
 
-<br></br>
-<Image src="/images/currents.webp" alt="Hello" width={500} height={500} />
+This document provides information about the backend of the project. It covers the technologies used, the architecture, and the APIs.
 
+## Technologies Used
 
- **Understand the Types of Currents**: There are several types of water currents you may encounter while swimming in deep water. These include rip currents, longshore currents, and undertow. Each of these currents behaves differently and requires a different approach to navigate safely.
+The backend of the project is built using the following technologies:
 
-   - **Rip Currents**: These are powerful, narrow channels of fast-moving water that can move at speeds of up to 8 feet per second. They typically move directly away from the shore, cutting through the lines of breaking waves.
-   
-   - **Longshore Currents**: These currents move parallel to the shore and are caused by waves hitting the beach at an angle.
-   
-   - **Undertow**: This is a subsurface current that is near the shore. It's usually not very strong, but it can knock you off your feet if you're standing in shallow water.
+- Node.js: A JavaScript runtime environment.
+- Express.js: A web application framework for Node.js.
+- MongoDB: A NoSQL database for storing data.
+- Mongoose: An Object Data Modeling (ODM) library for MongoDB.
 
-**Recognize the Signs of a Current**: Look for changes in water color, water movement, or the presence of debris or foam moving in a linear direction. Rip currents, for instance, often appear as a channel of churning, choppy water or a line of foam, seaweed, or debris moving steadily seaward.
+## Architecture
 
-**Swim Parallel to the Shore**: If you're caught in a rip current or longshore current, don't try to swim directly against it. Instead, swim parallel to the shore until you're out of the current. Once you're free of the current, you can swim back to shore.
+The backend follows a layered architecture, consisting of the following layers:
 
-**Stay Calm**: If you find yourself caught in a current, it's important to stay calm. Panic can lead to exhaustion, which can be dangerous in deep water. Remember that most currents are relatively narrow, so if you can keep your wits about you and swim parallel to the shore, you should be able to escape.
+1. **Routes**: Handles incoming HTTP requests and routes them to the appropriate controllers.
+2. **Controllers**: Implements the business logic and interacts with the models.
+3. **Models**: Defines the data schema and interacts with the database.
+4. **Database**: Stores the data using MongoDB.
 
-**Use Floatation Devices**: If you're not a strong swimmer, consider using a floatation device when swimming in deep water. This can help you stay afloat if you're caught in a current.
+## APIs
 
-**Swim with a Buddy**: Again make sure you never swim alone in deep water. Having someone else with you can provide assistance if you get into trouble.
+The backend provides the following APIs:
 
-**Know Your Limits**: Deep water swimming can be physically demanding. Be aware of your own physical limitations and don't push yourself too hard.
+### 1. GET /api/users
 
-**Learn Lifesaving Skills**: Knowing how to perform CPR and other lifesaving skills can be invaluable when swimming in deep water. Consider taking a course in lifesaving skills before you venture out into deep water.
+- Description: Retrieves a list of all users.
+- Response:
+  ```json
+  [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane@example.com"
+    }
+  ]
+  ```
+
+### 2. POST /api/users
+
+- Description: Creates a new user.
+- Request:
+  ```json
+  {
+    "name": "Alice",
+    "email": "alice@example.com"
+  }
+  ```
+- Response:
+  ```json
+  {
+    "id": "3",
+    "name": "Alice",
+    "email": "alice@example.com"
+  }
+  ```
+
+## Conclusion
+
+This document provides an overview of the backend of the project, including the technologies used, the architecture, and the available APIs.
+
+Feel free to modify the content according to your specific project requirements.
